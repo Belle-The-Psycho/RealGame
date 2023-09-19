@@ -5,7 +5,7 @@ let boardWidth = 750;
 let boardHeight = 250;
 let context; 
 
-//dinos
+//dino
 let dinoWidth = 88;
 let dinoHeight = 94;
 let dinoX = 50;
@@ -17,4 +17,11 @@ let dino = {
     y : dinoY,
     width : dinoWidth, 
     height : dinoHeight
+}
+
+
+window.onload = function() {
+    board = document.getElementById("board");
+    board.height = boardHeight;
+    board.width = boardWidth;
 }
