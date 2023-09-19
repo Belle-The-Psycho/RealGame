@@ -25,8 +25,11 @@ window.onload = function() {
     board.height = boardHeight;
     board.width = boardWidth;
 
-    context.board.getContext("2d"); //used for drawing on the board
+    context = board.getContext("2d"); //used for drawing on the board
 
     dinoImg = new Image();
-    dinoImg.src = ""
+    dinoImg.src = "./img/dino.png";
+    dino.onload = function() {
+        context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
+    }
 }
