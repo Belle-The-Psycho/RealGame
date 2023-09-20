@@ -58,6 +58,7 @@ window.onload = function() {
     cactus3Img.src = "./img/cactus3.png";
 
     requestAnimationFrame(update);
+    setInterval(placeCactus, 1000); //1000 milliseconds = 1 second
 }
 
 function update() {
@@ -65,4 +66,20 @@ function update() {
 
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
+}
+
+function placeCactus() {
+
+    //place cactus
+    let cactus = {
+        img : null,
+        x : cactusX,
+        y : cactusY,
+        width : null, 
+        height : cactusHeight
+
+    }
+
+    let placeCactusChance = Math.random(); //0 - 0.9999...
+    
 }
