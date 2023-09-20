@@ -48,6 +48,15 @@ window.onload = function() {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     }
 
+    cactus1Img = new Image();
+    cactus1Img.src = "./img/cactus1.png";
+
+    cactus2Img = new Image();
+    cactus2Img.src = "./img/cactus2.png";
+
+    cactus3Img = new Image();
+    cactus3Img.src = "./img/cactus3.png";
+
     requestAnimationFrame(update);
 }
 
