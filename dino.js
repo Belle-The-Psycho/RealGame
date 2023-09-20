@@ -9,7 +9,7 @@ let context;
 let dinoWidth = 88;
 let dinoHeight = 94;
 let dinoX = 50;
-let dinoY = dinoHeight - dinoHeight;
+let dinoY = boardHeight - dinoHeight;
 let dinoImg;
 
 let dino = {
@@ -29,7 +29,7 @@ window.onload = function() {
 
     dinoImg = new Image();
     dinoImg.src = "./img/dino.png";
-    dino.onload = function() {
+    dinoImg.onload = function() {
         context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
     }
 }
