@@ -78,6 +78,8 @@ function update() {
     context.clearRect(0, 0, board.width, board.height);
 
     //dino
+    velocityY += gravity;
+    dino.y = Math.min(dino.y + velocityY, dinoY); //apply gravity to current dino.y, making sure it doesn't exceed the ground 
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
 
     //cactus
@@ -92,6 +94,11 @@ function update() {
 function moveDino(e) {
     if (gameOver) {
         return;
+    }
+
+    if ((e.code == "space" || e.code == "ArrowUp") && dino.y == dinoY) {
+        //jump 
+        velocityY = -10;
     }
 }
 
