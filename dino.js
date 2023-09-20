@@ -71,6 +71,8 @@ window.onload = function() {
 
 function update() {
     requestAnimationFrame(update);
+    
+    context.clearRect(0, 0, board.width, board.height);
 
     //dino
     context.drawImage(dinoImg, dino.x, dino.y, dino.width, dino.height);
@@ -78,6 +80,7 @@ function update() {
     //cactus
     for (let i = 0; i < cactusArray.length; i++) {
         let cactus = cactusArray[i];
+        cactus.x += velocityX;
         context.drawImage(cactus.img, cactus.x, cactus.y, cactus.width, cactus.height);
 
     }
@@ -111,5 +114,9 @@ function placeCactus() {
         cactus.img = cactus1Img;
         cactus.width = cactus1Width;
         cactusArray.push(cactus);
+    }
+
+    if (cactusArray.length > 5) { 
+        cactusArray.shift(); //remove the first element from the array so that the array doesn't constantly grow 
     }
 }
